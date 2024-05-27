@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"/>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<title>Units of Measurement Converter</title>
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+<nav class="navbar navbar-dark bg-primary">
+    <div class="navbar-brand">
+        <h2>&nbsp;Units of Measurement Converter</h2>
+
+        <a id="recipeWebsite" style="color: MediumSeaGreen;" href="https://jwaters7.github.io/RecipePicker/">Want some use out of this converter? Make yourself a meal!</a>
+
+    </div>
+</nav>
+
+<!-- An interactive converter that turns fahrenheit values into celsius ones. The value of "celsiusTemp" changes whenever you input text into the text box "fahrenheitValue", if it is a number. No enter key or button press is required, as it is an "oninput" script. -->
+<div class="container-fluid">
+<div class="row">
+<div class="col-12 col-sm-12 col-lg-12" style="background: lightsteelblue;">
+<div class="mb-2"></div>
+<h5>Enter temperature in Fahrenheit below. Temperature in Celsius: <span id="celsiusTemp">...</span></h5>
+<input id="fahrenheitValue">
+
+<script type="text/javascript">
+
+//(Farhenheit minus 32) multiplied by 5/9 roughly equals celsius.
+function celsiusConversion() {
+    var fahrInteger = parseInt(fahrenheitValue.value);
+    let conversionTemp = ((fahrInteger - 32) * (5/9));
+    celsiusTemp.textContent = conversionTemp;
+}
+fahrenheitValue.oninput = celsiusConversion;
+
+</script>
+
+
+<!-- An interactive converter that turns pound values into gram ones. The value of "gramWeight" changes whenever you input text into the text box "poundValue", if it is a number. No enter key or button press is required, as it is an "oninput" script. -->
+<div class="container-fluid">
+<div class="row">
+<div class="col-12 col-sm-12 col-lg-12" style="background: lightsteelblue;">
+<div class="mb-2"></div>
+<h5>Enter weight in pounds below. Weight in grams: <span id="gramWeight">...</span></h5>
+<input id="poundValue">
+
+<script type="text/javascript">
+
+// Pounds divided by 0.0022046 roughly equals grams.
+function gramConversion() {
+    var poundInteger = parseInt(poundValue.value);
+    let conversionWeight = (poundInteger / 0.0022046);
+    gramWeight.textContent = conversionWeight;
+}
+poundValue.oninput = gramConversion;
+
+</script>
+
+
+<!-- An interactive converter that turns ounce values into mL ones. The value of "mlVolume" changes whenever you input text into the text box "ounceValue", if it is a number. No enter key or button press is required, as it is an "oninput" script. -->
+<div class="container-fluid">
+<div class="row">
+<div class="col-12 col-sm-12 col-lg-12" style="background: lightsteelblue;">
+<div class="mb-2"></div>
+<h5>Enter volume in ounces below. Volume in mL: <span id="mlVolume">...</span></h5>
+<input id="ounceValue">
+
+<script type="text/javascript">
+
+//Ounces multiplied by 29.57353 roughly equals mL.
+function mlConversion() {
+    var ounceInteger = parseInt(ounceValue.value);
+    let conversionVolume = (ounceInteger * 29.57353);
+    mlVolume.textContent = conversionVolume;
+}
+ounceValue.oninput = mlConversion;
+
+</script>
+
+
+
+</body>
+</html>
